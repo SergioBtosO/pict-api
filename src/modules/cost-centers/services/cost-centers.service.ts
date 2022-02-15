@@ -12,7 +12,7 @@ export class CostCentersService {
     private readonly usersService: UsersService,
   ) {}
 
-  async getCostCenter(): Promise<CostCenter[]> {
+  async getCostCenters(): Promise<CostCenter[]> {
     return await this.costCentersDao.getAll();
   }
 

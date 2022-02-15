@@ -17,7 +17,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  getUserss(): Promise<User[]> {
+  getUsers(): Promise<User[]> {
     return this.usersService.getUsers();
   }
 
@@ -27,20 +27,17 @@ export class UsersController {
   }
 
   @Post()
-  createTimeRecord(@Body() user: CreateUserDto) {
+  createUser(@Body() user: CreateUserDto) {
     return this.usersService.createUser(user);
   }
 
   @Put(':id')
-  updateTimeRecordById(
-    @Param('id') id: string,
-    @Body() timeRecord: UpdateUserDto,
-  ) {
-    return this.usersService.updateUser(id, timeRecord);
+  updateUserById(@Param('id') id: string, @Body() user: UpdateUserDto) {
+    return this.usersService.updateUser(id, user);
   }
 
   @Delete(':id')
-  deleteTimeRecordById(@Param('id') id: string) {
+  deleteUserById(@Param('id') id: string) {
     return this.usersService.removeUser(id);
   }
 }

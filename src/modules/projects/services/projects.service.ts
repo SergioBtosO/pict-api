@@ -64,7 +64,7 @@ export class ProjectsService {
     return await this.projectsDao.update(id, project);
   }
 
-  async removeTimeRecord(id: string) {
+  async removeProject(id: string) {
     return await this.projectsDao.delete(id);
   }
 }
